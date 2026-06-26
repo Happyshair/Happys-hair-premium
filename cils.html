@@ -443,7 +443,15 @@ body{background:#FAF8F4;color:#1C1610;font-family:'Outfit',system-ui,sans-serif;
       </optgroup>
       <optgroup label="Micro-pigmentation">
         <option value="micro1,200,https://buy.stripe.com/28EaEWdEB94O3bfb5Ad7q0b">Premiere micro-pigmentation - 200€</option>
-        <option value="micro2,280,https://buy.stripe.com/3cIbJ0asp6WGh256Pkd7q0c">Rattrapage - 280€</option>
+        <option value="micro2,280,https://buy.stripe.com/3cIbJ0asp6WGh256Pkd7q0c">Rattrapage micropigmentation - 280€</option>
+      </optgroup>
+      <optgroup label="Retouches micropigmentation">
+        <option value="rt-oblig,50,https://buy.stripe.com/9B6cN41VTep85jn7Tod7q0a">Retouche obligatoire - 50€</option>
+        <option value="rt-3-8,60,https://buy.stripe.com/9B6cN41VTep85jn7Tod7q0a">Retouche 3-8 mois - 60€</option>
+        <option value="rt-9-18,90,https://buy.stripe.com/9B6cN41VTep85jn7Tod7q0a">Retouche 9 mois - 1,5 an - 90€</option>
+        <option value="rt-18-24,120,https://buy.stripe.com/9B6cN41VTep85jn7Tod7q0a">Retouche 1,5 - 2 ans - 120€</option>
+        <option value="rt-30-48,150,https://buy.stripe.com/9B6cN41VTep85jn7Tod7q0a">Retouche 2,5 - 4 ans - 150€</option>
+        <option value="rt-4plus,180,https://buy.stripe.com/9B6cN41VTep85jn7Tod7q0a">Retouche au-dela de 4 ans - 180€</option>
       </optgroup>
     </select>
   </div>
@@ -610,7 +618,7 @@ var MONTHS = ['Janvier','Fevrier','Mars','Avril','Mai','Juin',
               'Juillet','Aout','Septembre','Octobre','Novembre','Decembre'];
 var DAYS   = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 
-var calY = 2026, calM = 4; /* 0-indexed, 4 = Mai */
+var calY = new Date().getFullYear(), calM = new Date().getMonth(); /* mois en cours */
 var today = new Date(); today.setHours(0,0,0,0);
 var selDate = '', selSlot = '', selPresta = '', selPrice = 0, selStripe = '';
 var payChoice = 1;
@@ -1026,7 +1034,7 @@ var BK = {
   prestaPrice: '',
   stripeUrl:   '',
   accoUrl:     '',
-  calY: 2026, calM: 6,   /* 0-indexed: 6 = Juillet */
+  calY: new Date().getFullYear(), calM: new Date().getMonth(),   /* mois en cours */
   selDate: '',
   selSlot: '',
   payChoice: 'full'       /* 'full' or 'acco' */
